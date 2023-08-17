@@ -118,6 +118,7 @@ export default defineComponent({
     hide: () => true,
     /* eslint-disable @typescript-eslint/no-unused-vars */
     'on-error': (e: Event) => true,
+    'on-load': (e: Event) => true,
     'on-prev': (oldIndex: number, newIndex: number) => true,
     'on-next': (oldIndex: number, newIndex: number) => true,
     'on-prev-click': (oldIndex: number, newIndex: number) => true,
@@ -400,6 +401,8 @@ export default defineComponent({
     // handle loading process
     const onImgLoad = () => {
       setImgSize()
+      console.log('thisisatest')
+      emit('on-load', e)
     }
 
     const onTestImgLoad = () => {
